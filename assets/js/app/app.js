@@ -35,16 +35,36 @@
   //remove dd-wrt css
   $('link[href*="style/"]').remove();
 
+
   //BUILD OUT BOOTSTRAP3 STRUCTURE
   //THIS SAVES US FROM HAVING TO MODIFY THE DD-WRT BUILD.
   $header.prependTo('body');
+  //$header.find('nav').append($iconbar);
   $nav.addClass('nav navbar-nav');
   $nav.find('a strong').contents().unwrap();
   $nav.find('span strong').contents().unwrap();
   $nav.find('span').wrap('<a href="#"></a>');
   $nav.find('a span').contents().unwrap();
+  
+  //find all nav capture scripts, parse, and create li class
+  $nav.find('> li > a > script').each(function() {
+    var $script = $(this);
+    var text = $script.text();
+    var $li = $script.parents('li');
+    var $icon = $("<i></i>");
+    text = text.replace('Capture(','');
+    text = text.replace(')','');
+    text = text.replace('bmenu.','');
+    text = text.toLowerCase();
+    
+    $li.addClass('menu-' + text);
+    $icon.addClass('icon-' + text);
+    $li.find('a').append($icon);
+
+  });
   $nav.find('li.current')
     .addClass('active');
+
   $dropdowns = $nav.find('li > div > ul');
   $dropdowns.unwrap().addClass('dropdown-menu');
   $dropdowns.parents('li').addClass('dropdown');

@@ -1,0 +1,10 @@
+
+.icon-security:before { content: '\e801'; } /* '' */
+.icon-accrestriction:before { content: '\e806'; } /* '' */
+.icon-statu:before { content: '\e805'; } /* '' */
+.icon-applications:before { content: '\e807'; } /* '' */
+.icon-admin:before { content: '\e800'; } /* '' */
+.icon-setup:before { content: '\e804'; } /* '' */
+.icon-flash:before { content: '\e809'; } /* '' */
+.icon-services:before { content: '\e803'; } /* '' */
+.icon-wireless:before { content: '\e802'; } /* '' */

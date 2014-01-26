@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'dd-wrt';
+  src: url('../fonts/dd-wrt.eot?54189244');
+  src: url('../fonts/dd-wrt.eot?54189244#iefix') format('embedded-opentype'),
+       url('../fonts/dd-wrt.woff?54189244') format('woff'),
+       url('../fonts/dd-wrt.ttf?54189244') format('truetype'),
+       url('../fonts/dd-wrt.svg?54189244#dd-wrt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'dd-wrt';
+    src: url('../fonts/dd-wrt.svg?54189244#dd-wrt') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "dd-wrt";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-security:before { content: '\e801'; } /* '' */
+.icon-accrestriction:before { content: '\e806'; } /* '' */
+.icon-statu:before { content: '\e805'; } /* '' */
+.icon-applications:before { content: '\e807'; } /* '' */
+.icon-admin:before { content: '\e800'; } /* '' */
+.icon-setup:before { content: '\e804'; } /* '' */
+.icon-flash:before { content: '\e809'; } /* '' */
+.icon-services:before { content: '\e803'; } /* '' */
+.icon-wireless:before { content: '\e802'; } /* '' */

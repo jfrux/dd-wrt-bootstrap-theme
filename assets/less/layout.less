@@ -1,11 +1,32 @@
 .primary-nav {
+  .navbar-brand {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 800;
+    color:@brand-success;
+  }
+  
   .nav {
+    &.iconbar-nav {
+      > li {
+        > a {
+          font-size: 21px;
+          line-height: 40px;
+          padding: 5px 12px;
+          i.fa {
+          }
+        }
+      }
+    }
     > li {
       a {
+        font-family: 'Open Sans',sans-serif;
         font-size:13px;
+
       }
     }
   }
+
+
 }
 
 .content {
