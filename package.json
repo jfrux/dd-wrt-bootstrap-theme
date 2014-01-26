@@ -1,14 +1,14 @@
 {
-  "name": "ddwrt-bootstrap",
+  "name": "dd-wrt-bootstrap-theme",
   "version": "0.0.1",
   "author": "Joshua F. Rountree <joshua@swodev.com>",
   "homepage": "http://joshuairl.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/joshuairl/ddwrt-bootstrap.git"
+    "url": "git://github.com/joshuairl/dd-wrt-bootstrap-theme.git"
   },
   "bugs": {
-    "url" : "https://github.com/joshuairl/ddwrt-bootstrap/issues"
+    "url" : "https://github.com/joshuairl/dd-wrt-bootstrap-theme/issues"
   },
   "licenses": [{
     "type": "MIT",
