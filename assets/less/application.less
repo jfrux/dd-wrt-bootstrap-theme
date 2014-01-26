@@ -1,0 +1,96 @@
+
+/*!
+ * Roots 6.5.1
+ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+@import "font-awesome/font-awesome.less";
+@import "bootstrap/bootstrap.less";
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body { }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+@ddwrt_primary: #e51937;
+@import "layout.less";
+@import "page.less";
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: @screen-xs-max) { 
+  @import "responsive/tiny/layout";
+  @import "responsive/tiny/page";
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+  @import "responsive/small/layout"; 
+  @import "responsive/small/page";
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+  @import "responsive/medium/layout"; 
+  @import "responsive/medium/page"; 
+}
+@media (min-width: @screen-lg-min) { 
+  @import "responsive/large/layout"; 
+  @import "responsive/large/page"; 
+}
+a {
+  color:#888;
+}
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content {
+
+}
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+
+.main { }
+
+/* Gallery Shortcode */
+.gallery-row { padding: 15px 0; }
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.sidebar { }
+
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.content-info { }
+
+
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
