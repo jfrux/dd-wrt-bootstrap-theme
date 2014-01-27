@@ -52,7 +52,7 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-.icon-security:before { content: '\e801'; } /* '' */
+.icon-security:before { content: \e801; } /* '' */
 .icon-accrestriction:before { content: '\e806'; } /* '' */
 .icon-statu:before { content: '\e805'; } /* '' */
 .icon-applications:before { content: '\e807'; } /* '' */

@@ -12,7 +12,7 @@
   var $nav = DDWRT.ui.$nav = $("#menuMainList");
   var $header = DDWRT.ui.$header = $('
   <header role="banner" class="banner">
-    <div class="primary-nav navbar navbar-inverse navbar-static-top">
+    <div class="primary-nav navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <a href="/" class="navbar-brand">DD-WRT</a>
         
@@ -25,7 +25,7 @@
           </button>
         </div>
         
-        <nav role="navigation" class="collapse navbar-collapse">
+        <nav role="navigation" class="collapse pull-right navbar-collapse">
         </nav>
       </div>
     </div>
@@ -46,11 +46,22 @@
   $nav.find('span').wrap('<a href="#"></a>');
   $nav.find('a span').contents().unwrap();
   
+  var navIconClasses = DDWRT.ui.navIconClasses = {
+    'setup':'wrench',
+    'wireless':'signal',
+    'services':'cogs',
+    'security':'shield',
+    'accrestriction':'key',
+    'applications':'list',
+    'admin':'lock',
+    'statu':'leaf'
+  }
   //find all nav capture scripts, parse, and create li class
   $nav.find('> li > a > script').each(function() {
     var $script = $(this);
     var text = $script.text();
     var $li = $script.parents('li');
+    var $link = $li.find('a:first');
     var $icon = $("<i></i>");
     text = text.replace('Capture(','');
     text = text.replace(')','');
@@ -58,18 +69,29 @@
     text = text.toLowerCase();
     
     $li.addClass('menu-' + text);
-    $icon.addClass('icon-' + text);
-    $li.find('a').append($icon);
-
+    $icon.addClass('fa fa-' + navIconClasses[text]);
+    $link.prepend($icon);
+    $li.find('i').after(' ');
+    $link.wrapInner('<span></span>');
+    $link.find('script').remove();
+    $icon.prependTo($link);
+    var $span = $link.find('span');
+    $icon.after(' ');
+    $span.text($.trim($span.text()));
+    $link.attr('title',$span.text());
+    //$link.dotdotdot();
+    // $link.tooltip({
+    //   'placement':'bottom'
+    // });
   });
   $nav.find('li.current')
     .addClass('active');
 
-  $dropdowns = $nav.find('li > div > ul');
+  var $dropdowns = $nav.find('li > div > ul');
   $dropdowns.unwrap().addClass('dropdown-menu');
   $dropdowns.parents('li').addClass('dropdown');
   $dropdowns.each(function() {
-    $this = $(this);
+    var $this = $(this);
     $this.prev('a')
       .addClass('dropdown-toggle')
       .attr('data-target','#')
@@ -101,6 +123,10 @@
     //console.log($item.contents()($page_title));
   });
   $("form").addClass('form-horizontal');
+
+  //fix tables in forms 
+  $("form table input:not(input[type=checkbox],input[type=radio]),form table select").addClass('form-control');
+  //fix settings
   $(".setting").each(function() {
     var $inputWrap = $(this);
     $inputWrap.find('script').remove();
@@ -189,7 +215,7 @@
         // and divider such as period's for ipv4
         if(numInputsCount > 1) {
           $controlWrap.addClass('input-group');
-          $divider = $(this.nextSibling)
+          var $divider = $(this.nextSibling)
           if($divider.text() == '.') {
             //assume IP or something...
             $divider.wrap('<span class="input-group-addon"/>');
@@ -291,6 +317,22 @@
       $btn.addClass('btn-default');
     }
   });
+
+  // var curr_bottom = 0;
+  // $($(".content-left form h2").get().reverse()).each(function() {
+  //   var $h2 = $(this);
+  //   var offset = $h2.offset();
+  //   var top = offset.top;
+  //   var bottom = ($(document).height() - curr_bottom);
+  //   console.log($h2);
+  //   console.log('top: ' + top);
+  //   $h2.affix({
+  //     offset: {
+  //       top: top
+  //     }
+  //   });
+  //   curr_bottom = top;
+  // });
   //console.log($current_subnav_item);
   // DDWRT.ui.$nav
   //   .addClass('navbar navbar-default navbar-fixed-top')

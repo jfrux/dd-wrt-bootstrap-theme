@@ -1,0 +1,112 @@
+.primary-nav {
+  .navbar-brand {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 800;
+    color:#FFF;
+    font-size: 18px;
+    padding:15px 0;
+  }
+  .nav {
+    > li {
+      > a {
+        font-size:14px;
+        text-align:left;
+        > i.fa {
+          font-size: 20px;
+          left: 10px;
+          line-height: 25px;
+          margin: 0 auto;
+          position: absolute;
+          text-align: center;
+          width: 24px;
+        }
+        > span {
+          display: inline-block;
+          line-height: 24px;
+          margin-left: 27px;
+        }
+
+        > b {
+          display:none;
+        }
+
+      }
+
+      > ul.dropdown-menu {
+        background-color:darken(@navbar-default-bg,3%);
+        > li {
+          > a {
+            color:#FFF;
+            padding:9px 8px 9px 41px;
+            font-size:14px;
+            //transition: background-color 0.05s ease 0s;
+            &:hover,&:active,&:focus {
+              color:#FFF;
+              background-color:@ddwrt_primary;
+              //transition: none 0s ease 0s;
+            }
+          }
+        }
+      }
+      //OPEN OR ACTIVE NAVBAR ITEM
+      &.open,&.active {
+        > ul.dropdown-menu {
+          display: block;
+          width: 100%;
+
+          > a {
+            color:#FFF;
+
+            > span {
+              color:#FFF;
+            }
+          }
+        }
+        div.tooltip {
+          display:none;
+        }
+        > a {
+          color:#FFF;
+          font-weight:700;
+          > i {
+            color:@ddwrt_primary;
+          }
+          > span {
+            color:#FFF;
+          }
+          background-color:@navbar-default-bg;
+          .box-shadow(none);
+
+          &:hover,&:active,&:focus {
+            background-color:@navbar-default-bg;
+            
+            > span {
+              color:inherit;
+            }
+            > b {
+              color:inherit;
+            }
+          }
+
+          //transition: background-color 0.25s ease 0s;
+        }
+      }
+      &.open {
+        > a {
+          background-color:@navbar-default-bg;
+          > span {
+            color:@navbar-default-bg;
+          }
+          > b {
+            color:#FFF;
+          }
+        }
+      }
+      &.menu-accrestriction {
+        > a {
+        }
+      }
+      
+    }
+  }
+}

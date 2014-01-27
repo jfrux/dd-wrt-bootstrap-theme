@@ -1,28 +1,123 @@
+body {
+  margin-top:72px;
+}
 .primary-nav {
+  border:0;
   .navbar-brand {
+    top:5px;
+    color: #FFFFFF;
     font-family: 'Open Sans',sans-serif;
+    font-size: 23px;
     font-weight: 800;
-    color:@brand-success;
+    position: absolute;
   }
-  
+  background-color:@navbar-default-bg;
   .nav {
-    &.iconbar-nav {
-      > li {
-        > a {
+    > li {
+      > div.ui-effects-wrapper > a {
+        width:100%;
+      }
+      > a,> div.ui-effects-wrapper > a {
+        font-family: 'Open Sans',sans-serif;
+        font-size:13px;
+        font-weight:700;
+        text-align:center;
+        padding-bottom: 11px;
+        padding-top: 11px;
+        color:#999;
+        &:hover {
+          color:#FFF;
+          > i {
+            color:@ddwrt_primary;
+          }
+          > span {
+            color:#FFF;
+          }
+          background-color:inherit;
+          transition: none 0s ease 0s;
+        }
+        > i.fa {
           font-size: 21px;
-          line-height: 40px;
-          padding: 5px 12px;
-          i.fa {
+          margin:0 auto;
+        }
+        > span {
+          //display:none;
+          display:block;
+          line-height:14px;
+        }
+
+        > b {
+          bottom: 0;
+          left: 0;
+          margin: 0 auto;
+          position: absolute;
+          right: 0;
+          color:@navbar-default-bg;
+        }
+
+      }
+
+      > ul.dropdown-menu {
+        > li {
+          > a {
+            padding:6px 8px;
+            font-size:13px;
+            transition: background-color 0.05s ease 0s;
+            &:hover {
+              color:#FFF;
+              background-color:@ddwrt_primary;
+              transition: none 0s ease 0s;
+            }
           }
         }
       }
-    }
-    > li {
-      a {
-        font-family: 'Open Sans',sans-serif;
-        font-size:13px;
+      //OPEN OR ACTIVE NAVBAR ITEM
+      &.open,&.active {
+        div.tooltip {
+          display:none;
+        }
+        > a,> div.ui-effects-wrapper > a {
+          color:#FFF;
+          font-weight:700;
+          > i {
+            color:@ddwrt_primary;
+          }
+          > span {
+            color:#FFF;
+          }
+          background-color:inherit;
+          .box-shadow(0 -4px 0 @ddwrt_primary inset);
 
+          &:hover {
+            background-color:#FFF;
+            
+            > span {
+              color:@navbar-default-bg;
+            }
+            > b {
+              color:#FFF;
+            }
+          }
+
+          //transition: background-color 0.25s ease 0s;
+        }
       }
+      &.open {
+        > a,> div.ui-effects-wrapper > a {
+          background-color:#FFF;
+          > span {
+            color:@navbar-default-bg;
+          }
+          > b {
+            color:#FFF;
+          }
+        }
+      }
+      &.menu-accrestriction {
+        > a {
+        }
+      }
+      
     }
   }
 
@@ -42,6 +137,13 @@
       form {
         > h2 {
           margin-top:0;
+
+          &.affix {
+            &:last-child {
+              position:fixed;
+              top:72px;
+            }
+          }
         }
         .form-group {
           color:#333;
