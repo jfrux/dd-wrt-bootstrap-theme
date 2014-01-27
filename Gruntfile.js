@@ -47,6 +47,8 @@ module.exports = function(grunt) {
             'assets/js/plugins/bootstrap/tab.js',
             'assets/js/plugins/bootstrap/affix.js',
             'assets/js/plugins/*.js',
+            'assets/js/vendor/jquery.dotdotdot.js',
+            'assets/js/vendor/jquery-ui-1.10.4.custom.js',
             'assets/js/app/app.js'
           ]
         },
