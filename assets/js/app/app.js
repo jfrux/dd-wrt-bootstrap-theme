@@ -55,7 +55,7 @@ $(document).ready(function() {
       'applications':'list',
       'admin':'lock',
       'statu':'leaf'
-    }
+    };
     //find all nav capture scripts, parse, and create li class
     $nav.find('> li > a > script').each(function() {
       var $script = $(this);
@@ -189,7 +189,7 @@ $(document).ready(function() {
           var $numInput = $(this);
 
           //check for prefix or suffix text on single input.
-          if(numInputsCount == 1) {
+          if(numInputsCount === 1) {
             if(textNodes.length > 0) {
               //add class to controlWrap for input-group
               $controlWrap.addClass('input-group');
