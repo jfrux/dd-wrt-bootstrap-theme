@@ -16,4 +16,8 @@ Ideally this process would be done by overriding the source code and compiling t
 This application.js will override DOM / HTML elements if needed to make them tw-bootstrap3 friendly after the page renders.  With caching, this should be seamless to the user experience.
 It acts as a "patcher" or "clean-up" script.
 
-More info to come!
+TODO:
+- [ ] Build
+  - [ ] Created a basic build that allows for CSS / JS to be added in to the theme.
+- [ ] Design Changes
+  - [ ] Place all design tasks here.
