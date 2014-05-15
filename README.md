@@ -18,6 +18,6 @@ It acts as a "patcher" or "clean-up" script.
 
 TODO:
 - [ ] Build
-  - [ ] Created a basic build that allows for CSS / JS to be added in to the theme.
+  - [x] Create a basic build that allows for CSS / JS to be added in to the theme.
 - [ ] Design Changes
   - [ ] Place all design tasks here.
